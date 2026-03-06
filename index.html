@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Julia — UX Designer & Writer</title>
+  <meta name="description" content="Portfolio of Julia, a UX Designer and UX Writer crafting human-centered digital experiences.">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Skip to content -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Navigation -->
+  <header class="nav" role="banner">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">Julia</a>
+
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#about" class="nav__link">About</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" aria-hidden="true">
+      <a href="#projects" class="nav__overlay-link">Projects</a>
+      <a href="#about" class="nav__overlay-link">About</a>
+      <a href="#contact" class="nav__overlay-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="container">
+        <div class="hero__content">
+          <p class="overline hero__overline">UX Designer & Writer</p>
+          <h1 class="hero__title">Julia</h1>
+          <p class="hero__tagline">I craft thoughtful, human-centered experiences where design and language work together. Every interaction should feel clear, purposeful, and genuinely helpful.</p>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <svg class="hero__scroll-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 8 10 12 14 8"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section--surface" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="overline">Selected Work</p>
+          <h2 id="projects-heading">Projects</h2>
+        </div>
+
+        <div class="project-grid reveal-stagger">
+          <!-- Project 1 -->
+          <a href="projects/case-study-1.html" class="project-card reveal">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="10" width="100" height="60" rx="6" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="20" y="25" width="35" height="4" rx="2" fill="#D4D1CC"/>
+                  <rect x="20" y="33" width="55" height="3" rx="1.5" fill="#E5E3DF"/>
+                  <rect x="20" y="40" width="45" height="3" rx="1.5" fill="#E5E3DF"/>
+                  <rect x="20" y="52" width="25" height="8" rx="4" fill="#B87A5A" opacity="0.3"/>
+                  <rect x="75" y="22" width="25" height="25" rx="4" fill="#E5E3DF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Redesigning the Checkout Experience</h3>
+              <p class="project-card__desc">Streamlined a 5-step checkout into a single, intuitive flow — reducing cart abandonment by 23% through research-driven design and clearer microcopy.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">UX Writing</span>
+                <span class="tag">Research</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 2 -->
+          <a href="projects/case-study-2.html" class="project-card reveal">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="15" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="45" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="75" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="15" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="45" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="75" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <circle cx="26" cy="23" r="5" fill="#B87A5A" opacity="0.3"/>
+                  <rect x="50" y="18" width="12" height="2" rx="1" fill="#D4D1CC"/>
+                  <rect x="50" y="22" width="8" height="2" rx="1" fill="#E5E3DF"/>
+                  <circle cx="86" cy="23" r="5" fill="#E5E3DF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Building a Design System from Scratch</h3>
+              <p class="project-card__desc">Created a unified component library and design language that brought consistency across 4 product teams and accelerated delivery by 40%.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">Design Systems</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Project 3 -->
+          <a href="projects/case-study-3.html" class="project-card reveal">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="15" width="80" height="50" rx="6" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="30" y="25" width="40" height="3" rx="1.5" fill="#D4D1CC"/>
+                  <rect x="30" y="32" width="60" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="38" width="55" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="44" width="50" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="50" width="35" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <circle cx="85" cy="28" r="5" fill="#B87A5A" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Voice & Tone Guidelines for FinTech</h3>
+              <p class="project-card__desc">Developed a comprehensive content framework that turned complex financial jargon into clear, trustworthy language users actually understand.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Writing</span>
+                <span class="tag">Content Strategy</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about__text reveal">
+            <p class="overline">About</p>
+            <h2 id="about-heading">Designing with empathy, writing with clarity</h2>
+            <div class="about__bio">
+              <p>I'm a UX Designer and Writer with a deep belief that great design is invisible — it just works. For the past six years, I've been helping product teams bridge the gap between complex systems and the humans who use them.</p>
+              <p>My work sits at the intersection of design and language. I prototype in Figma, test with real users, and write every label, error message, and onboarding flow with the same care as the visual design. Because the words are the interface too.</p>
+              <p>When I'm not designing, you'll find me exploring typography, reading about cognitive psychology, or hunting for the perfect croissant.</p>
+            </div>
+            <p class="about__skills-title">Tools & Skills</p>
+            <div class="about__skills-list">
+              <span class="tag">Figma</span>
+              <span class="tag">Miro</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Usability Testing</span>
+              <span class="tag">Content Strategy</span>
+              <span class="tag">Information Architecture</span>
+              <span class="tag">Design Systems</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+          <div class="about__photo reveal">
+            <p class="about__photo-placeholder">Photo placeholder<br><span style="font-size: 0.75rem; opacity: 0.7;">Replace with your photo</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section--surface" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact reveal">
+          <p class="overline">Get in Touch</p>
+          <h2 id="contact-heading">Let's work together</h2>
+          <p class="contact__text">I'm currently open to new opportunities — whether it's a full-time role, a freelance project, or just a conversation about design. I'd love to hear from you.</p>
+          <a href="mailto:julia@example.com" class="contact__btn">Say hello</a>
+          <div class="contact__links">
+            <a href="#" class="contact__link" aria-label="LinkedIn profile">LinkedIn</a>
+            <a href="#" class="contact__link" aria-label="Dribbble profile">Dribbble</a>
+            <a href="#" class="contact__link" aria-label="Read.cv profile">Read.cv</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+        <a href="#" class="footer__top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+</body>
+</html>

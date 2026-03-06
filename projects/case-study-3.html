@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice & Tone Guidelines for FinTech — Julia</title>
+  <meta name="description" content="Case study: Developing a content framework that turned complex financial jargon into clear, trustworthy language.">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav nav--scrolled" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Julia</a>
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="../index.html#projects" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__overlay" aria-hidden="true">
+      <a href="../index.html#projects" class="nav__overlay-link">Projects</a>
+      <a href="../index.html#about" class="nav__overlay-link">About</a>
+      <a href="../index.html#contact" class="nav__overlay-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <p class="overline case-hero__overline">Case Study</p>
+        <h1 class="case-hero__title">Voice & Tone Guidelines for FinTech</h1>
+        <div class="case-hero__tags">
+          <span class="tag">UX Writing</span>
+          <span class="tag">Content Strategy</span>
+        </div>
+        <div class="case-hero__image">
+          <p>Hero image placeholder — 16:9</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <div class="case-meta">
+        <dl class="meta-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Lead UX Writer</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>12 weeks</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>1 writer, 2 designers, 1 brand strategist</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Notion, Figma, Google Docs</dd>
+          </div>
+        </dl>
+      </div>
+
+      <article>
+        <section class="case-section reveal">
+          <h2>The Challenge</h2>
+          <p>The company offered personal finance tools — budgeting, investing, and lending — but the product voice was all over the place. The investment section read like a legal disclaimer, the budgeting tool was overly casual, and error messages ranged from robotic to alarming.</p>
+          <p>Users trusted the product's features but described it as "confusing" and "cold" in satisfaction surveys. For a financial product, trust depends on clarity, and clarity depends on consistent, human language.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Content Audit</h2>
+          <p>I cataloged over 300 strings across the product — buttons, headings, tooltips, error states, empty states, confirmation dialogs, and email notifications. I tagged each for tone (formal/informal), clarity (clear/jargon-heavy), and consistency (matches brand/doesn't match).</p>
+          <p>The audit revealed that 40% of user-facing text contained financial jargon without explanation, and the tone shifted dramatically between product areas. There was no shared vocabulary — the same concept was called "transfer," "move," and "send" in different places.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Content audit spreadsheet & tone mapping — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Defining the Voice</h2>
+          <p>Through workshops with stakeholders, I facilitated exercises to define the brand's voice attributes. We landed on four principles: <strong>Clear</strong> (no jargon without explanation), <strong>Confident</strong> (reassuring without overpromising), <strong>Warm</strong> (human, not robotic), and <strong>Respectful</strong> (never condescending about money).</p>
+          <p>For each principle, I created a spectrum showing how tone should shift based on context. A celebratory moment (reaching a savings goal) could be warmer and more enthusiastic, while an error with a failed transaction should be calm, clear, and action-oriented.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Voice principles & tone spectrum — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>The Guidelines</h2>
+          <p>The final deliverable was a living Notion document organized into practical sections: Voice principles with examples, a tone adaptation framework for different scenarios, a word list (preferred terms vs. avoided terms), component-specific writing patterns, and a "before/after" gallery of rewritten UI text.</p>
+          <p>I made the guidelines actionable rather than abstract. Instead of "be friendly," the guide showed: <em>Before: "Transaction failed. Error code 4012." After: "This payment didn't go through. Your card issuer declined the transaction — you might want to try a different card or contact your bank."</em></p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Guidelines document structure & examples — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Implementation</h2>
+          <p>I partnered with the design team to integrate the guidelines into Figma as a text styles library with usage notes. I also rewrote the 50 highest-traffic strings myself as reference implementations, showing the team what "good" looked like in practice.</p>
+          <p>To support adoption, I held weekly "copy reviews" where designers and PMs could bring strings for feedback. These became the most popular recurring meeting on the team calendar.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Results</h2>
+          <p><strong>28% improvement</strong> in comprehension scores for key flows (measured via task-based testing). <strong>"Trustworthy"</strong> moved from 5th to 1st in brand attribute surveys. <strong>45% reduction</strong> in support tickets categorized as "confusion." <strong>Copy review adoption</strong> — 85% of new features went through copy review within 3 months.</p>
+          <p>The product's app store rating improved from 3.8 to 4.4, with multiple reviews specifically mentioning how "easy to understand" the app had become.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Reflection</h2>
+          <p>This project showed me that content strategy isn't just about writing better words — it's about building systems that help everyone write better words. The guidelines were only valuable because they were practical, accessible, and maintained. Abstract voice documents gather dust; actionable word lists and before/after examples get used every day.</p>
+        </section>
+      </article>
+
+      <nav class="case-nav" aria-label="Case study navigation">
+        <div class="case-nav__inner">
+          <a href="case-study-2.html" class="case-nav__link">
+            <span class="case-nav__label">Previous project</span>
+            <span class="case-nav__title">Design System</span>
+          </a>
+          <div></div>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+        <a href="#" class="footer__top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

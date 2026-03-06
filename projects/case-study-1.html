@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redesigning the Checkout Experience — Julia</title>
+  <meta name="description" content="Case study: How I streamlined a 5-step checkout into one intuitive flow, reducing cart abandonment by 23%.">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav nav--scrolled" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Julia</a>
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="../index.html#projects" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__overlay" aria-hidden="true">
+      <a href="../index.html#projects" class="nav__overlay-link">Projects</a>
+      <a href="../index.html#about" class="nav__overlay-link">About</a>
+      <a href="../index.html#contact" class="nav__overlay-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Case Hero -->
+    <section class="case-hero">
+      <div class="container">
+        <p class="overline case-hero__overline">Case Study</p>
+        <h1 class="case-hero__title">Redesigning the Checkout Experience</h1>
+        <div class="case-hero__tags">
+          <span class="tag">UX Design</span>
+          <span class="tag">UX Writing</span>
+          <span class="tag">Research</span>
+        </div>
+        <div class="case-hero__image">
+          <p>Hero image placeholder — 16:9</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metadata -->
+    <div class="case-study-content">
+      <div class="case-meta">
+        <dl class="meta-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Lead UX Designer</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>8 weeks</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>2 designers, 3 engineers, 1 PM</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Figma, Maze, Hotjar</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Content -->
+      <article>
+        <section class="case-section reveal">
+          <h2>The Challenge</h2>
+          <p>The existing checkout was a 5-step process with high drop-off rates. Analytics showed 67% of users abandoned their cart, with the biggest losses occurring between the shipping and payment steps. Customer support tickets frequently mentioned confusion around delivery options and unexpected costs.</p>
+          <p>We needed to simplify the flow without removing essential information, while also improving the clarity of every label, error message, and call-to-action along the way.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Discovery & Research</h2>
+          <p>I started with a heuristic evaluation of the existing checkout, documenting 23 usability issues ranging from unclear form labels to missing progress indicators. I then conducted 8 moderated usability sessions, watching real users struggle through the flow.</p>
+          <p>Key findings from research:</p>
+          <p>Users were surprised by shipping costs appearing late in the flow. The payment form asked for information in an unintuitive order. Error messages were vague ("Invalid input") rather than actionable. The "Continue" button didn't clearly indicate what came next.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Research findings & affinity map — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Design Approach</h2>
+          <p>Rather than incremental fixes, I proposed consolidating the five steps into a single scrollable page with clear visual sections. This eliminated the anxiety of an unknown number of remaining steps and let users see the full picture before committing.</p>
+          <p>For every form field, I rewrote the labels and helper text with the principle: "Tell users what they need to know, when they need to know it." Error messages became specific and helpful — "Please enter the 3 digits on the back of your card" instead of "Invalid CVV."</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Before & after checkout flow comparison — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Prototyping & Testing</h2>
+          <p>I created a high-fidelity prototype in Figma and ran two rounds of usability testing with 12 participants total. The first round surfaced issues with the shipping cost summary — users still felt uncertain. I iterated on a live cost breakdown that updated as they typed their address.</p>
+          <p>The second round validated the design. Task completion time dropped from an average of 4 minutes 20 seconds to 2 minutes 10 seconds, and participants rated the experience 4.6/5 for clarity.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Prototype iterations & test results — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Results</h2>
+          <p>After launch, we measured the impact over 6 weeks against the previous quarter's baseline:</p>
+          <p><strong>23% reduction</strong> in cart abandonment rate. <strong>35% fewer</strong> checkout-related support tickets. <strong>48 seconds faster</strong> average completion time. <strong>4.7/5</strong> post-purchase satisfaction rating (up from 3.2).</p>
+          <p>The most rewarding feedback came from the support team, who said customers had stopped asking "Where did my discount code go?" — because the new design kept it visible throughout.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Reflection</h2>
+          <p>This project reinforced my belief that the best UX improvements often come from writing, not just layout changes. Clearer labels, better error messages, and honest pricing reduced friction more than any visual redesign could alone. It also taught me the value of testing early — the first round of feedback fundamentally changed my approach to the shipping section.</p>
+        </section>
+      </article>
+
+      <!-- Prev / Next -->
+      <nav class="case-nav" aria-label="Case study navigation">
+        <div class="case-nav__inner">
+          <div></div>
+          <a href="case-study-2.html" class="case-nav__link case-nav__link--next">
+            <span class="case-nav__label">Next project</span>
+            <span class="case-nav__title">Building a Design System</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+        <a href="#" class="footer__top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

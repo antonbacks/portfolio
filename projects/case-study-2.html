@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Building a Design System from Scratch — Julia</title>
+  <meta name="description" content="Case study: Creating a unified component library that brought consistency across 4 product teams.">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav nav--scrolled" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Julia</a>
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="../index.html#projects" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__overlay" aria-hidden="true">
+      <a href="../index.html#projects" class="nav__overlay-link">Projects</a>
+      <a href="../index.html#about" class="nav__overlay-link">About</a>
+      <a href="../index.html#contact" class="nav__overlay-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <p class="overline case-hero__overline">Case Study</p>
+        <h1 class="case-hero__title">Building a Design System from Scratch</h1>
+        <div class="case-hero__tags">
+          <span class="tag">UX Design</span>
+          <span class="tag">Design Systems</span>
+        </div>
+        <div class="case-hero__image">
+          <p>Hero image placeholder — 16:9</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <div class="case-meta">
+        <dl class="meta-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>Design System Lead</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>6 months</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>3 designers, 4 engineers</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Figma, Storybook, Notion</dd>
+          </div>
+        </dl>
+      </div>
+
+      <article>
+        <section class="case-section reveal">
+          <h2>The Challenge</h2>
+          <p>The company had grown from one product to four in two years, but the design language hadn't kept up. Each team had developed its own patterns — four different button styles, three modal implementations, and inconsistent spacing that made the products feel disconnected.</p>
+          <p>Beyond visual inconsistency, this was a velocity problem. Designers were rebuilding the same components for each project, and engineers were implementing variations they shouldn't have needed to build.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Audit & Inventory</h2>
+          <p>I began with a comprehensive interface inventory, cataloging every component, color, and type style across all four products. The results were stark: 14 shades of blue, 8 button variants, and 6 different approaches to form validation.</p>
+          <p>I also interviewed designers and engineers from each team to understand their pain points and workflows. The biggest frustration was universal: "I know this component exists somewhere, but I can't find it, so I build my own."</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Component audit & inventory results — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Foundation First</h2>
+          <p>Rather than jumping straight to components, I focused on foundations: a unified color palette derived from the brand, a type scale with clear hierarchy, a spacing system based on an 8px grid, and elevation/shadow tokens.</p>
+          <p>I documented the reasoning behind every decision in Notion, so that future designers could understand not just <em>what</em> the tokens were, but <em>why</em>. This philosophy of "document the why" became a core principle of the system.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Design tokens & foundation documentation — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Component Architecture</h2>
+          <p>I designed components with composability in mind. Each component had clearly defined states (default, hover, active, disabled, error), responsive behavior, and accessibility requirements baked in from the start.</p>
+          <p>The Figma library used auto-layout extensively and component properties for variant switching, making it fast for designers to assemble screens without detaching. Engineers built corresponding React components in Storybook with matching prop APIs.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Component architecture & Figma structure — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Adoption & Governance</h2>
+          <p>A design system only works if people use it. I ran onboarding workshops for each team, created a contribution model for new components, and set up a Slack channel for questions and requests. Monthly "design system reviews" kept alignment as products evolved.</p>
+          <p>The contribution model was intentionally lightweight: propose in Slack, design review with two approvals, build and document. Low friction meant high participation.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Results</h2>
+          <p><strong>40% faster</strong> design-to-development handoff. <strong>60% reduction</strong> in "one-off" component requests. <strong>92% adoption</strong> across product teams within 4 months. <strong>100% of new features</strong> built with system components after month 5.</p>
+          <p>The biggest win wasn't the numbers — it was hearing a new hire say "Everything just makes sense, it's like one product" during their first week.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Reflection</h2>
+          <p>The hardest part of building a design system isn't the design — it's the people. Getting four teams to agree on a single button style required diplomacy, empathy, and a lot of listening. I learned that governance matters more than aesthetics, and that documentation is a product in itself.</p>
+        </section>
+      </article>
+
+      <nav class="case-nav" aria-label="Case study navigation">
+        <div class="case-nav__inner">
+          <a href="case-study-1.html" class="case-nav__link">
+            <span class="case-nav__label">Previous project</span>
+            <span class="case-nav__title">Checkout Experience</span>
+          </a>
+          <a href="case-study-3.html" class="case-nav__link case-nav__link--next">
+            <span class="case-nav__label">Next project</span>
+            <span class="case-nav__title">Voice & Tone Guidelines</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+        <a href="#" class="footer__top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

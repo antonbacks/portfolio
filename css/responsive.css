@@ -1,0 +1,49 @@
+/* ============================================
+   Small screens (below 48rem / 768px)
+   ============================================ */
+@media (max-width: 47.999rem) {
+  .about__photo {
+    max-width: 20rem;
+    margin-inline: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .hero {
+    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100dvh - var(--nav-height));
+  }
+}
+
+
+/* ============================================
+   Medium screens (48rem–64rem)
+   ============================================ */
+@media (min-width: 48rem) {
+  .hero__tagline {
+    max-width: 42ch;
+  }
+}
+
+
+/* ============================================
+   Large screens (64rem+)
+   ============================================ */
+@media (min-width: 64rem) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+  }
+}
+
+
+/* ============================================
+   Extra large screens (80rem+)
+   ============================================ */
+@media (min-width: 80rem) {
+  .hero__content {
+    padding-left: 4vw;
+  }
+}
