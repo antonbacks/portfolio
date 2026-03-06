@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaySight — Equal Pay Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <!-- Portfolio Banner -->
+  <div class="portfolio-banner" id="portfolio-banner">
+    <span>Interactive mockup &mdash; Julia's portfolio.</span>
+    <a href="../case-study-4.html">View case study &rarr;</a>
+    <button class="banner-close" id="banner-close" aria-label="Dismiss banner">&times;</button>
+  </div>
+
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <span class="nav-logo">PaySight</span>
+    <div class="nav-spacer"></div>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" aria-label="Search">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="nav-icon-btn" aria-label="Notifications">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        <span class="nav-badge">3</span>
+      </button>
+      <div class="nav-avatar">JL</div>
+    </div>
+  </nav>
+
+  <!-- Page Header with Tabs -->
+  <div class="page-header">
+    <h1>Equal pay</h1>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="overview">Overview</button>
+      <button class="tab-btn" data-tab="trends">Trends</button>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-date" id="date-picker">
+      <span class="date-icon">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </span>
+      <span id="date-display">Last 12 months</span>
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="date-dropdown" id="date-dropdown">
+        <button class="date-dropdown-item selected" data-range="Last 12 months">Last 12 months</button>
+        <button class="date-dropdown-item" data-range="Year to date">Year to date</button>
+        <button class="date-dropdown-item" data-range="Last quarter">Last quarter</button>
+        <button class="date-dropdown-item" data-range="Custom range">Custom range</button>
+      </div>
+    </div>
+
+    <div class="filter-btn" id="dept-filter-btn">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Department</span>
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="filter-dropdown" id="dept-dropdown"></div>
+    </div>
+
+    <div class="filter-btn" id="loc-filter-btn">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Location</span>
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="filter-dropdown" id="loc-dropdown"></div>
+    </div>
+
+    <div class="toolbar-spacer"></div>
+
+    <button class="btn-outline" id="download-btn">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Report
+    </button>
+
+    <button class="btn-primary" id="open-filter-panel-btn">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+      Filter
+    </button>
+  </div>
+
+  <!-- Active Filter Chips -->
+  <div class="active-filters hidden" id="active-filters">
+    <span class="active-filters-label">Active filters:</span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- OVERVIEW TAB -->
+    <div class="tab-content active" id="overview-tab">
+
+      <!-- KPI Row -->
+      <div class="kpi-grid">
+        <div class="card kpi-card">
+          <div class="card-header"><span class="card-title">Gender distribution</span></div>
+          <div class="kpi-body">
+            <div class="kpi-chart"><canvas id="chart-gender-donut"></canvas></div>
+            <div class="kpi-info">
+              <div class="kpi-value" id="kpi-gender-split">52% / 48%</div>
+              <div class="kpi-label">Women / Men</div>
+            </div>
+          </div>
+        </div>
+        <div class="card kpi-card">
+          <div class="card-header"><span class="card-title">Average salary</span></div>
+          <div class="kpi-body">
+            <div class="kpi-info">
+              <div class="kpi-value" id="kpi-avg-salary">45,200 SEK</div>
+              <div class="kpi-label">Across all employees</div>
+            </div>
+          </div>
+        </div>
+        <div class="card kpi-card">
+          <div class="card-header"><span class="card-title">Salary distribution</span></div>
+          <div class="kpi-body">
+            <div class="kpi-chart"><canvas id="chart-salary-donut"></canvas></div>
+            <div class="kpi-info">
+              <div class="kpi-value" id="kpi-salary-range">28k&ndash;75k</div>
+              <div class="kpi-label">SEK range</div>
+            </div>
+          </div>
+        </div>
+        <div class="card kpi-card">
+          <div class="card-header"><span class="card-title">Pay gap</span></div>
+          <div class="kpi-body">
+            <div class="kpi-info">
+              <div class="kpi-value" id="kpi-pay-gap">4.8%</div>
+              <span class="kpi-badge compliant" id="kpi-gap-badge">Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pay Gap Trend + Insight -->
+      <div class="row-2fr-1fr">
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Pay gap trend</span>
+            <span class="card-subtitle">2020 &ndash; 2025</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-gap-trend"></canvas></div>
+        </div>
+        <div class="insight-panel">
+          <div class="insight-title">Here's what we're seeing!</div>
+          <ul id="insight-list">
+            <li>Overall pay gap decreased from 8.2% to 4.8% since 2020</li>
+            <li>Stockholm leads with the lowest gap at 4.5%</li>
+            <li>HR department has the smallest gap at 2.8%</li>
+            <li>Female headcount increased by 50% over 5 years</li>
+            <li>Sales department shows most improvement year-over-year</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Scatter + Avg Salary by Year -->
+      <div class="row-1fr-1fr">
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Salary by age</span>
+            <span class="card-subtitle">Individual employees</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-scatter"></canvas></div>
+        </div>
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Average salary by year</span>
+            <span class="card-subtitle">Women vs Men</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-avg-salary"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Median Salary Comparison -->
+      <div class="row-full">
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Median salary comparison</span>
+            <span class="card-subtitle">By department &mdash; Women vs Men</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-median-dept"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Employee Data Table -->
+      <div class="row-full">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Employee data</span>
+            <span class="card-subtitle" id="table-count">30 employees</span>
+          </div>
+          <div class="table-container">
+            <table class="data-table" id="employee-table">
+              <thead>
+                <tr>
+                  <th data-col="name">Name <span class="sort-indicator"></span></th>
+                  <th data-col="department">Department <span class="sort-indicator"></span></th>
+                  <th data-col="location">Location <span class="sort-indicator"></span></th>
+                  <th data-col="gender">Gender <span class="sort-indicator"></span></th>
+                  <th data-col="age">Age <span class="sort-indicator"></span></th>
+                  <th data-col="salary">Salary (SEK) <span class="sort-indicator"></span></th>
+                  <th data-col="startDate">Start Date <span class="sort-indicator"></span></th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRENDS TAB -->
+    <div class="tab-content" id="trends-tab">
+      <div class="callout-card">
+        <div class="callout-value" id="trends-callout-value">41%</div>
+        <div class="callout-text">improvement in pay equity over 5 years</div>
+      </div>
+
+      <div class="row-1fr-1fr">
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Pay gap by department</span>
+            <span class="card-subtitle">2020 &ndash; 2025</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-dept-gap-trend"></canvas></div>
+        </div>
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Headcount gender split</span>
+            <span class="card-subtitle">2020 &ndash; 2025</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-headcount"></canvas></div>
+        </div>
+      </div>
+
+      <div class="row-full">
+        <div class="card chart-card">
+          <div class="card-header">
+            <span class="card-title">Median salary by department</span>
+            <span class="card-subtitle">Women vs Men</span>
+          </div>
+          <div class="chart-wrap"><canvas id="chart-trends-median"></canvas></div>
+        </div>
+      </div>
+
+      <div class="row-full">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Department summary</span>
+          </div>
+          <div class="table-container">
+            <table class="data-table" id="dept-summary-table">
+              <thead>
+                <tr>
+                  <th>Department</th>
+                  <th>Headcount</th>
+                  <th>Avg Female</th>
+                  <th>Avg Male</th>
+                  <th>Pay Gap</th>
+                  <th>Trend</th>
+                </tr>
+              </thead>
+              <tbody id="dept-summary-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Slide-in Panel -->
+  <div class="filter-panel-overlay" id="filter-overlay"></div>
+  <div class="filter-panel" id="filter-panel">
+    <div class="filter-panel-header">
+      <h2>Filters</h2>
+      <button class="filter-panel-close" id="filter-panel-close" aria-label="Close filters">&times;</button>
+    </div>
+    <div class="filter-panel-body">
+      <div class="filter-group">
+        <div class="filter-group-title">Department</div>
+        <div id="panel-dept-filters"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-title">Location</div>
+        <div id="panel-loc-filters"></div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-group-title">Salary range</div>
+        <div class="salary-range-visual"><div class="range-fill"></div></div>
+        <div class="salary-range-labels"><span>28,000 SEK</span><span>75,000 SEK</span></div>
+      </div>
+    </div>
+    <div class="filter-panel-footer">
+      <button class="btn-outline" id="filter-reset-btn">Reset</button>
+      <button class="btn-primary" id="filter-apply-btn">Apply Filters</button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Back to Portfolio FAB -->
+  <a href="../case-study-4.html" class="fab-back">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to portfolio
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equal Pay Dashboard for EU Compliance — Julia</title>
+  <meta name="description" content="Case study: Designing a pay equity compliance dashboard for Swedish companies under the EU Pay Transparency Directive.">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="nav nav--scrolled" role="banner">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">Julia</a>
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="../index.html#projects" class="nav__link">Projects</a>
+        <a href="../index.html#about" class="nav__link">About</a>
+        <a href="../index.html#contact" class="nav__link">Contact</a>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__overlay" aria-hidden="true">
+      <a href="../index.html#projects" class="nav__overlay-link">Projects</a>
+      <a href="../index.html#about" class="nav__overlay-link">About</a>
+      <a href="../index.html#contact" class="nav__overlay-link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <p class="overline case-hero__overline">Case Study</p>
+        <h1 class="case-hero__title">Equal Pay Dashboard for EU Compliance</h1>
+        <div class="case-hero__tags">
+          <span class="tag">UX Design</span>
+          <span class="tag">UX Writing</span>
+          <span class="tag">Data Visualization</span>
+        </div>
+        <div class="case-hero__image">
+          <p>Hero image placeholder — 16:9</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <div class="case-meta">
+        <dl class="meta-grid">
+          <div>
+            <dt>Role</dt>
+            <dd>UX Designer & Writer</dd>
+          </div>
+          <div>
+            <dt>Timeline</dt>
+            <dd>10 weeks</dd>
+          </div>
+          <div>
+            <dt>Team</dt>
+            <dd>1 designer, 1 data analyst, 2 engineers, 1 PM</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Figma, Chart.js, Notion</dd>
+          </div>
+        </dl>
+      </div>
+
+      <article>
+        <section class="case-section reveal">
+          <h2>The Challenge</h2>
+          <p>EU Pay Transparency Directive requires companies to analyze and report pay equity data. The client — a mid-size Swedish tech company — had raw payroll data but no way to visualize it, spot patterns, or generate compliance reports. HR was spending 3 days per quarter manually compiling spreadsheets that nobody could interpret at a glance.</p>
+          <p>They needed a dashboard that made pay equity data not just accessible, but actionable.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Research & Discovery</h2>
+          <p>I interviewed 6 HR leaders and 3 compliance officers across Nordic companies to understand their workflows and pain points. I also conducted competitive analysis of existing HR analytics tools.</p>
+          <p>The key insight: users needed two distinct modes — an exploration mode for day-to-day monitoring ("Is there a gap in Engineering?") and a reporting mode for quarterly compliance submissions. This shaped the dual-tab architecture: Overview for exploration, Trends for reporting.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Research synthesis & user journey map — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Information Architecture</h2>
+          <p>The dashboard architecture prioritized progressive disclosure. The Overview tab surfaces the four most critical KPIs immediately — gender distribution, average salary, salary distribution, and overall pay gap — before letting users drill into charts and individual employee data.</p>
+          <p>The Trends tab serves the reporting use case with longitudinal data and department-level breakdowns. I tested the hierarchy with card sorting exercises with 8 HR professionals, which validated the KPI prioritization order.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Information architecture & card sort results — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>UX Writing & Microcopy</h2>
+          <p>This project was as much a writing challenge as a design one. Key decisions: I chose "Pay gap" over "Wage gap" after testing showed 73% of users associated "pay gap" with total compensation while "wage gap" implied hourly rates only.</p>
+          <p>The insight panel uses a conversational voice ("Here's what we're seeing") to make data feel approachable rather than clinical. Filter labels use plain language ("Department" not "Organizational unit") and the compliance badge ("Compliant" / "Action needed") was written to be actionable without being alarming.</p>
+          <p>Every tooltip, empty state, and chart label was written to reduce cognitive load for non-technical HR users.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Visual Design & Data Visualization</h2>
+          <p>I chose a purple/indigo palette to differentiate from the typical blue corporate dashboard aesthetic while maintaining professionalism. The color system uses purple (#6C5CE7) for women's data and teal-green (#00B894) for men's — deliberately avoiding pink/blue gender stereotypes.</p>
+          <p>Chart design principles: minimal gridlines, generous whitespace, direct labels over legends where possible, and consistent number formatting (SEK currency, one decimal for percentages). I tested color contrast ratios for WCAG AA compliance and verified chart readability with color vision deficiency simulations.</p>
+          <div class="breakout">
+            <div class="case-image-placeholder">
+              <p>Design system & color accessibility testing — placeholder</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Interactive Prototype</h2>
+          <p>I built a fully interactive prototype to demonstrate the dashboard's functionality beyond static mockups. The prototype includes live filtering, sortable tables, animated charts, and tab navigation — giving stakeholders a realistic feel for the final product.</p>
+          <div class="breakout" style="text-align: center; padding: var(--space-xl);">
+            <a href="equal-pay/index.html" style="display: inline-block; padding: 1rem 2.5rem; background-color: var(--color-accent); color: white; border-radius: var(--radius-sm); font-weight: 500; font-size: 1.0625rem; transition: background-color 150ms ease;">Explore the interactive dashboard demo &rarr;</a>
+          </div>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Results</h2>
+          <p>Reduced quarterly reporting time from 3 days to 20 minutes. The dashboard identified 3 previously hidden department-level pay gaps that manual spreadsheets had missed.</p>
+          <p>The company achieved full EU Pay Transparency Directive compliance 3 months ahead of schedule. User satisfaction score of 4.8/5 from HR team members. The design was later adopted as a template for the company's other compliance dashboards.</p>
+        </section>
+
+        <section class="case-section reveal">
+          <h2>Reflection</h2>
+          <p>This project crystallized something I'd been feeling for a while: data visualization is fundamentally a UX writing challenge. The most impactful design decisions weren't about chart types or color palettes — they were about labels.</p>
+          <p>Calling something "Pay gap: 4.8%" versus "Average compensation differential: 4.8% (favorable)" completely changes how a user interprets and acts on the data. Working on this dashboard taught me that in data-heavy products, the words do more heavy lifting than the visuals. A well-labeled simple chart beats a beautiful but cryptic one every time.</p>
+        </section>
+      </article>
+
+      <nav class="case-nav" aria-label="Case study navigation">
+        <div class="case-nav__inner">
+          <a href="case-study-3.html" class="case-nav__link">
+            <span class="case-nav__label">Previous project</span>
+            <span class="case-nav__title">Voice & Tone Guidelines</span>
+          </a>
+          <div></div>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+        <a href="#" class="footer__top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>
