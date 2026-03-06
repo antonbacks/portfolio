@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Julia — UX Designer & Writer</title>
+  <meta name="description" content="Portfolio of Julia, a UX Designer and UX Writer crafting human-centered digital experiences.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <style>
+    /* === Reset === */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
+    body {
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+
+    /* === Variables (fixed values for print) === */
+    :root {
+      --color-bg: #F8F7F4;
+      --color-surface: #F0EEEA;
+      --color-card: #FFFFFF;
+      --color-text: #1A1918;
+      --color-text-secondary: #5C5A56;
+      --color-text-tertiary: #8E8B85;
+      --color-accent: #B87A5A;
+      --color-border: #E5E3DF;
+      --color-accent-tint: rgba(184, 122, 90, 0.08);
+
+      --font-heading: 'DM Serif Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --radius-sm: 0.375rem;
+      --radius-lg: 1rem;
+    }
+
+    /* === Base === */
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      background-color: #FFFFFF;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--color-text);
+      font-weight: 400;
+    }
+
+    h1 { font-size: 3.5rem; }
+    h2 { font-size: 2.25rem; }
+    h3 { font-size: 1.375rem; }
+
+    p {
+      color: var(--color-text-secondary);
+      max-width: 65ch;
+    }
+    p + p { margin-top: 1rem; }
+
+    ::selection {
+      background-color: rgba(184, 122, 90, 0.15);
+      color: var(--color-text);
+    }
+
+    .overline {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-accent);
+      line-height: 1.3;
+    }
+
+    .section-heading { margin-bottom: 2rem; }
+    .section-heading .overline { margin-bottom: 0.75rem; }
+
+    /* === Layout === */
+    .container {
+      width: 100%;
+      max-width: 72rem;
+      margin-inline: auto;
+      padding-inline: 2rem;
+    }
+
+    section { padding-block: 3rem; }
+    .section--surface { background-color: var(--color-surface); }
+
+    /* === Hero === */
+    .hero {
+      padding-top: 2.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero__content { padding-block: 1.5rem; }
+    .hero__overline { margin-bottom: 1rem; }
+    .hero__title { margin-bottom: 1.25rem; }
+    .hero__tagline {
+      font-size: 1.125rem;
+      max-width: 38ch;
+      line-height: 1.6;
+    }
+
+    /* === Project Grid === */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .project-card__image {
+      aspect-ratio: 3 / 2;
+      overflow: hidden;
+      background-color: var(--color-surface);
+    }
+
+    .project-card__placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-card__body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .project-card__title { font-size: 1.25rem; }
+
+    .project-card__desc {
+      font-size: 0.9375rem;
+      /* No line-clamp — show full text */
+    }
+
+    .project-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    /* === Tags === */
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-accent);
+      background-color: var(--color-accent-tint);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* === About === */
+    .about-layout {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about__text h2 { margin-bottom: 1.5rem; }
+    .about__bio { margin-bottom: 2rem; }
+    .about__skills-title {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+    .about__skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+    .about__photo {
+      aspect-ratio: 4 / 5;
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about__photo-placeholder {
+      color: var(--color-text-tertiary);
+      font-size: 0.8125rem;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    /* === Contact === */
+    .contact { text-align: center; }
+    .contact h2 { margin-bottom: 1rem; }
+    .contact__text {
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+    .contact__btn {
+      display: inline-block;
+      padding: 0.875rem 2.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--color-card);
+      background-color: var(--color-accent);
+      border-radius: var(--radius-sm);
+    }
+    .contact__email-url {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+    .contact__links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .contact__link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-tertiary);
+    }
+
+    /* === Footer === */
+    .footer {
+      padding-block: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer__text {
+      font-size: 0.8125rem;
+      color: var(--color-text-tertiary);
+    }
+
+    /* === Page rules for PDF === */
+    @page {
+      size: A4;
+      margin: 1.5cm 2cm;
+    }
+
+    @media print {
+      body { background-color: #FFFFFF; }
+      .section--surface { background-color: #F5F4F1; }
+      .project-card { break-inside: avoid; }
+      .about-layout { break-inside: avoid; }
+      section { padding-block: 2rem; }
+      a { color: inherit; }
+    }
+  </style>
+</head>
+<body>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="container">
+        <div class="hero__content">
+          <p class="overline hero__overline">UX Designer & Writer</p>
+          <h1 class="hero__title">Julia</h1>
+          <p class="hero__tagline">I craft thoughtful, human-centered experiences where design and language work together. Every interaction should feel clear, purposeful, and genuinely helpful.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section--surface" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-heading">
+          <p class="overline">Selected Work</p>
+          <h2 id="projects-heading">Projects</h2>
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="10" width="100" height="60" rx="6" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="20" y="25" width="35" height="4" rx="2" fill="#D4D1CC"/>
+                  <rect x="20" y="33" width="55" height="3" rx="1.5" fill="#E5E3DF"/>
+                  <rect x="20" y="40" width="45" height="3" rx="1.5" fill="#E5E3DF"/>
+                  <rect x="20" y="52" width="25" height="8" rx="4" fill="#B87A5A" opacity="0.3"/>
+                  <rect x="75" y="22" width="25" height="25" rx="4" fill="#E5E3DF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Redesigning the Checkout Experience</h3>
+              <p class="project-card__desc">Streamlined a 5-step checkout into a single, intuitive flow — reducing cart abandonment by 23% through research-driven design and clearer microcopy.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">UX Writing</span>
+                <span class="tag">Research</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="15" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="45" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="75" y="12" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="15" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="45" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="75" y="44" width="22" height="22" rx="4" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <circle cx="26" cy="23" r="5" fill="#B87A5A" opacity="0.3"/>
+                  <rect x="50" y="18" width="12" height="2" rx="1" fill="#D4D1CC"/>
+                  <rect x="50" y="22" width="8" height="2" rx="1" fill="#E5E3DF"/>
+                  <circle cx="86" cy="23" r="5" fill="#E5E3DF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Building a Design System from Scratch</h3>
+              <p class="project-card__desc">Created a unified component library and design language that brought consistency across 4 product teams and accelerated delivery by 40%.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">Design Systems</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" y="15" width="80" height="50" rx="6" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="30" y="25" width="40" height="3" rx="1.5" fill="#D4D1CC"/>
+                  <rect x="30" y="32" width="60" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="38" width="55" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="44" width="50" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <rect x="30" y="50" width="35" height="2.5" rx="1.25" fill="#E5E3DF"/>
+                  <circle cx="85" cy="28" r="5" fill="#B87A5A" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Voice & Tone Guidelines for FinTech</h3>
+              <p class="project-card__desc">Developed a comprehensive content framework that turned complex financial jargon into clear, trustworthy language users actually understand.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Writing</span>
+                <span class="tag">Content Strategy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card">
+            <div class="project-card__image">
+              <div class="project-card__placeholder">
+                <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="10" y="10" width="100" height="60" rx="6" stroke="#C4C1BB" stroke-width="1.5" fill="none"/>
+                  <rect x="22" y="50" width="10" height="14" rx="2" fill="#6C5CE7" opacity="0.3"/>
+                  <rect x="36" y="42" width="10" height="22" rx="2" fill="#6C5CE7" opacity="0.4"/>
+                  <rect x="50" y="35" width="10" height="29" rx="2" fill="#6C5CE7" opacity="0.5"/>
+                  <rect x="64" y="28" width="10" height="36" rx="2" fill="#6C5CE7" opacity="0.6"/>
+                  <rect x="78" y="22" width="10" height="42" rx="2" fill="#6C5CE7" opacity="0.4"/>
+                  <line x1="18" y1="20" x2="98" y2="20" stroke="#E5E3DF" stroke-width="0.75"/>
+                  <polyline points="22,45 36,38 50,40 64,30 78,25 92,22" stroke="#00B894" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Equal Pay Dashboard for EU Compliance</h3>
+              <p class="project-card__desc">Designed a pay equity compliance tool for Swedish companies under the EU Pay Transparency Directive — combining data visualization with clear, actionable UX writing.</p>
+              <div class="project-card__tags">
+                <span class="tag">UX Design</span>
+                <span class="tag">UX Writing</span>
+                <span class="tag">Data Visualization</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about__text">
+            <p class="overline">About</p>
+            <h2 id="about-heading">Designing with empathy, writing with clarity</h2>
+            <div class="about__bio">
+              <p>I'm a UX Designer and Writer with a deep belief that great design is invisible — it just works. For the past six years, I've been helping product teams bridge the gap between complex systems and the humans who use them.</p>
+              <p>My work sits at the intersection of design and language. I prototype in Figma, test with real users, and write every label, error message, and onboarding flow with the same care as the visual design. Because the words are the interface too.</p>
+              <p>When I'm not designing, you'll find me exploring typography, reading about cognitive psychology, or hunting for the perfect croissant.</p>
+            </div>
+            <p class="about__skills-title">Tools & Skills</p>
+            <div class="about__skills-list">
+              <span class="tag">Figma</span>
+              <span class="tag">Miro</span>
+              <span class="tag">Notion</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">User Research</span>
+              <span class="tag">Usability Testing</span>
+              <span class="tag">Content Strategy</span>
+              <span class="tag">Information Architecture</span>
+              <span class="tag">Design Systems</span>
+              <span class="tag">Accessibility</span>
+            </div>
+          </div>
+          <div class="about__photo">
+            <p class="about__photo-placeholder">Photo placeholder<br><span style="font-size: 0.75rem; opacity: 0.7;">Replace with your photo</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section--surface" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact">
+          <p class="overline">Get in Touch</p>
+          <h2 id="contact-heading">Let's work together</h2>
+          <p class="contact__text">I'm currently open to new opportunities — whether it's a full-time role, a freelance project, or just a conversation about design. I'd love to hear from you.</p>
+          <span class="contact__btn">Say hello</span>
+          <span class="contact__email-url">julia@example.com</span>
+          <div class="contact__links">
+            <span class="contact__link">LinkedIn</span>
+            <span class="contact__link">Dribbble</span>
+            <span class="contact__link">Read.cv</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">Designed & built by Julia. 2026.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

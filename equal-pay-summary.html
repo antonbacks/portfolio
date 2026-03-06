@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equal Pay Dashboard — Project Summary</title>
+  <style>
+    @page { margin: 2cm; size: A4; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: #2D3436;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; color: #6C5CE7; }
+    h2 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; color: #2D3436; border-bottom: 2px solid #EEEDF5; padding-bottom: 0.25rem; }
+    h3 { font-size: 0.95rem; margin: 1rem 0 0.35rem; color: #636E72; }
+    p, li { font-size: 0.9rem; }
+    p { margin-bottom: 0.5rem; }
+    .subtitle { color: #636E72; font-size: 1rem; margin-bottom: 1.5rem; }
+    .meta-row { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .meta-item { font-size: 0.85rem; }
+    .meta-item strong { color: #6C5CE7; }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.85rem; }
+    th, td { text-align: left; padding: 0.4rem 0.75rem; border: 1px solid #DFE6E9; }
+    th { background: #F5F4F9; font-weight: 600; color: #2D3436; }
+    td code { background: #EEEDF5; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.8rem; }
+    ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.25rem; }
+    .color-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin: 0.75rem 0; }
+    .color-swatch { padding: 0.5rem; border-radius: 6px; font-size: 0.75rem; text-align: center; }
+    .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin: 0.75rem 0; }
+    .result-card { background: #F5F4F9; border-radius: 8px; padding: 0.75rem 1rem; }
+    .result-card .number { font-size: 1.5rem; font-weight: 700; color: #6C5CE7; }
+    .result-card .label { font-size: 0.8rem; color: #636E72; }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; background: rgba(108,92,231,0.08); color: #6C5CE7; border-radius: 99px; font-size: 0.75rem; font-weight: 500; margin-right: 0.25rem; }
+    .section-break { border: none; border-top: 1px solid #EEEDF5; margin: 1.5rem 0; }
+    @media print {
+      body { padding: 0; }
+      h2 { break-after: avoid; }
+      table, .results-grid, .color-grid { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Equal Pay Dashboard</h1>
+  <p class="subtitle">4th Portfolio Project — Interactive Pay Equity Compliance Tool</p>
+
+  <div class="meta-row">
+    <div class="meta-item"><strong>Role:</strong> UX Designer & Writer</div>
+    <div class="meta-item"><strong>Timeline:</strong> 10 weeks</div>
+    <div class="meta-item"><strong>Tools:</strong> Figma, Chart.js, Notion</div>
+  </div>
+  <div class="meta-row">
+    <div class="meta-item"><strong>Team:</strong> 1 designer, 1 data analyst, 2 engineers, 1 PM</div>
+  </div>
+  <p>
+    <span class="tag">UX Design</span>
+    <span class="tag">UX Writing</span>
+    <span class="tag">Data Visualization</span>
+  </p>
+
+  <hr class="section-break">
+
+  <h2>The Challenge</h2>
+  <p>The EU Pay Transparency Directive requires companies to analyze and report pay equity data. The client — a mid-size Swedish tech company — had raw payroll data but no way to visualize it, spot patterns, or generate compliance reports. HR spent 3 days per quarter manually compiling spreadsheets. They needed a dashboard that made pay equity data accessible and actionable.</p>
+
+  <h2>Research & Discovery</h2>
+  <p>Interviewed 6 HR leaders and 3 compliance officers across Nordic companies. Conducted competitive analysis of existing HR analytics tools.</p>
+  <p><strong>Key insight:</strong> Users need two distinct modes — <em>exploration</em> for day-to-day monitoring and <em>reporting</em> for quarterly compliance. This shaped the dual-tab architecture (Overview + Trends).</p>
+
+  <h2>Information Architecture</h2>
+  <p>Progressive disclosure approach: Overview tab surfaces 4 critical KPIs immediately (gender distribution, average salary, salary distribution, pay gap), then lets users drill into charts and individual data. Trends tab serves reporting with longitudinal data and department breakdowns.</p>
+
+  <h3>Dashboard Structure</h3>
+  <table>
+    <tr><th>Section</th><th>Content</th></tr>
+    <tr><td>Top nav</td><td>PaySight logo, search, notifications, avatar</td></tr>
+    <tr><td>Header</td><td>"Equal pay" title + Overview/Trends tabs</td></tr>
+    <tr><td>Toolbar</td><td>Date picker, department/location filters, download/filter buttons</td></tr>
+    <tr><td>KPI row (4 cards)</td><td>Gender distribution, avg salary, salary distribution, pay gap</td></tr>
+    <tr><td>Charts (Overview)</td><td>Pay gap trend, scatter plot, avg salary bars, median comparison</td></tr>
+    <tr><td>Data table</td><td>Sortable employee table (name, dept, location, gender, age, salary)</td></tr>
+    <tr><td>Charts (Trends)</td><td>Dept pay gap lines, headcount area, dept median bars</td></tr>
+  </table>
+
+  <h2>UX Writing Decisions</h2>
+  <ul>
+    <li><strong>"Pay gap"</strong> over "Wage gap" — 73% of users associated "pay gap" with total compensation</li>
+    <li><strong>Insight panel</strong> uses conversational voice: "Here's what we're seeing"</li>
+    <li><strong>Plain language labels</strong>: "Department" not "Organizational unit"</li>
+    <li><strong>Compliance badge</strong>: "Compliant" / "Action needed" — actionable without being alarming</li>
+    <li>Every tooltip, empty state, and chart label written to reduce cognitive load</li>
+  </ul>
+
+  <h2>Visual Design</h2>
+
+  <div class="color-grid">
+    <div class="color-swatch" style="background:#6C5CE7; color:white;">Primary<br>#6C5CE7</div>
+    <div class="color-swatch" style="background:#00B894; color:white;">Secondary<br>#00B894</div>
+    <div class="color-swatch" style="background:#FD79A8; color:white;">Accent<br>#FD79A8</div>
+    <div class="color-swatch" style="background:#F5F4F9; border:1px solid #DFE6E9;">Background<br>#F5F4F9</div>
+  </div>
+
+  <ul>
+    <li>Purple (#6C5CE7) for women's data, teal-green (#00B894) for men's — avoids pink/blue stereotypes</li>
+    <li>Minimal gridlines, generous whitespace, direct labels over legends</li>
+    <li>WCAG AA color contrast verified, color vision deficiency tested</li>
+  </ul>
+
+  <h2>Interactivity</h2>
+  <table>
+    <tr><th>Feature</th><th>Behavior</th></tr>
+    <tr><td>Tab switching</td><td>Toggle Overview/Trends, destroy/recreate charts</td></tr>
+    <tr><td>Department filter</td><td>Dropdown with checkboxes, re-renders all data</td></tr>
+    <tr><td>Location filter</td><td>Same pattern, with active filter chips</td></tr>
+    <tr><td>Table sorting</td><td>Click headers for asc/desc sort with arrow indicators</td></tr>
+    <tr><td>Chart tooltips</td><td>Custom formatted (SEK currency, percentages)</td></tr>
+    <tr><td>KPI animations</td><td>Count-up via requestAnimationFrame</td></tr>
+    <tr><td>Download report</td><td>Toast: "Report downloaded successfully"</td></tr>
+    <tr><td>Filter panel</td><td>Slide-in from right with full controls</td></tr>
+  </table>
+
+  <h3>Charts (8 total, Chart.js 4.x)</h3>
+  <ol style="padding-left: 1.25rem; font-size: 0.85rem;">
+    <li>Gender distribution donut</li>
+    <li>Salary distribution donut</li>
+    <li>Pay gap trend line (Sweden, Stockholm, Gothenburg)</li>
+    <li>Scatter plot — salary by age, colored by gender</li>
+    <li>Average salary grouped bars (women vs men by year)</li>
+    <li>Department pay gap lines (Trends)</li>
+    <li>Headcount gender area chart (Trends)</li>
+    <li>Department median bars (Trends)</li>
+  </ol>
+
+  <h2>Results</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="number">3 days &rarr; 20 min</div>
+      <div class="label">Quarterly reporting time reduced</div>
+    </div>
+    <div class="result-card">
+      <div class="number">3 hidden gaps</div>
+      <div class="label">Department-level pay gaps identified</div>
+    </div>
+    <div class="result-card">
+      <div class="number">3 months early</div>
+      <div class="label">EU directive compliance achieved</div>
+    </div>
+    <div class="result-card">
+      <div class="number">4.8 / 5</div>
+      <div class="label">User satisfaction from HR team</div>
+    </div>
+  </div>
+
+  <h2>Files Created</h2>
+  <table>
+    <tr><th>File</th><th>Description</th></tr>
+    <tr><td><code>projects/case-study-4.html</code></td><td>Case study narrative page (8 sections)</td></tr>
+    <tr><td><code>projects/equal-pay/index.html</code></td><td>Interactive dashboard mockup</td></tr>
+    <tr><td><code>projects/equal-pay/dashboard.css</code></td><td>Dashboard design system</td></tr>
+    <tr><td><code>projects/equal-pay/dashboard.js</code></td><td>All interactivity (charts, filters, sorting)</td></tr>
+    <tr><td><code>projects/equal-pay/data.js</code></td><td>Sample data model (30 employees, trends)</td></tr>
+  </table>
+
+  <h3>Modified Files</h3>
+  <table>
+    <tr><th>File</th><th>Change</th></tr>
+    <tr><td><code>index.html</code></td><td>Added 4th project card to grid</td></tr>
+    <tr><td><code>css/animations.css</code></td><td>Added 4th stagger delay (450ms)</td></tr>
+    <tr><td><code>projects/case-study-3.html</code></td><td>Added "Next project" link to case-study-4</td></tr>
+  </table>
+
+  <hr class="section-break">
+  <p style="font-size: 0.8rem; color: #B2BEC3; text-align: center; margin-top: 1rem;">
+    Equal Pay Dashboard — Julia's Portfolio Project 4 &bull; Generated March 2026
+  </p>
+
+</body>
+</html>
